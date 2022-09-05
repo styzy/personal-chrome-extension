@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Microsoft YaHei';
+  user-select: none;
+}
+.plugins {
+  padding: 10px 0;
+  width: 250px;
+}
+.plugins .plugin {
+  padding-right: 20px;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.plugins .plugin .state {
+  position: relative;
+  float: left;
+  width: 40px;
+  height: 40px;
+}
+.plugins .plugin .state:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #ccc;
+  content: '';
+}
+.plugins .plugin .name {
+  float: left;
+  width: calc(100% - 40px);
+  font-size: 14px;
+}
+.plugins .plugin.enable .name {
+  color: #424242;
+}
+.plugins .plugin.enable:hover {
+  background-color: #037be3;
+}
+.plugins .plugin.enable:hover .name {
+  color: #fff;
+}
+.plugins .plugin.disable {
+  background-color: #eee;
+  cursor: not-allowed;
+}
+.plugins .plugin.disable .state:before {
+  display: none;
+}
+.plugins .plugin.disable .name {
+  color: #999;
+}
+.plugins .plugin.active .state:before {
+  background-color: #037be3;
+}
+.plugins .plugin.active .name {
+  color: #037be3;
+}

@@ -1,0 +1,60 @@
+$color-theme = #037be3
+$plugin-height = 40px
+
+body
+	margin 0
+	padding 0
+	font-family -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
+	font-family 'Microsoft YaHei'
+	user-select none
+.plugins
+	padding 10px 0
+	width 250px
+	.plugin
+		&
+			padding-right 20px
+			height $plugin-height
+			line-height @height
+			cursor pointer
+			.state
+				position relative
+				float left
+				width @height
+				height @height
+				&:before
+					position absolute
+					top 0
+					right 0
+					bottom 0
+					left 0
+					z-index 1
+					display block
+					margin auto
+					width 10px
+					height 10px
+					border-radius 100%
+					background-color #CCCCCC
+					content ''
+			.name
+				float left
+				width 'calc(100% - %s)' % @height
+				font-size 14px
+		&.enable
+			.name
+				color #424242
+		&.enable:hover
+			background-color $color-theme
+			.name
+				color #FFFFFF
+		&.disable
+			background-color #EEEEEE
+			cursor not-allowed
+			.state:before
+				display none
+			.name
+				color #999
+		&.active
+			.state:before
+				background-color $color-theme
+			.name
+				color $color-theme
